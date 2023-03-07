@@ -19,3 +19,25 @@ class Solution:
                     break 
                 if np == len(n): return start
         return -1
+
+# But this is not efficient, so the solution below is from neetcode
+
+"""
+for i in range(len(h)+1-len(n)):
+    for j in range(len(n)):
+        if h[i+j]!=n[j]:
+            break
+        if j == len(n)-1:
+            return i
+return -1
+
+And a far more simpler solution is
+
+for i in range(len(h)+1-len(n)):
+    if h[i:i+len(n)] == needle:
+        return i
+
+which is stupidly more simpler
+
+but there is an even more efficient solution using the KMP algorithm
+"""
