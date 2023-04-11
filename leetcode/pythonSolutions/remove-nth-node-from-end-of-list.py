@@ -22,3 +22,25 @@ class Solution:
             curr = curr.next
 
         return dummy.next
+
+
+"""
+The below solution is a much more efficient method to solving the above problem with only two pointers, and the time complexity only comes up to O(n). Courtesy of neetcode.
+
+dumm = ListNode(0,head)
+left = dummy
+right = head
+
+while n>0 and riight:
+    right = right.next
+    n-=1
+
+while right:
+    left = left.next
+    right = right.next
+
+#delete
+left.next = left.next.next
+return dummy.next
+
+"""
