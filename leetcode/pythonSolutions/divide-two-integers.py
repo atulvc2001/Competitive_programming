@@ -13,14 +13,11 @@ class Solution:
                 print("This is c -->",c)
             q += 2**(c-1)
             a = a-b*(2**(c-1))
-            print("jj",a)
             
         print("--->", q)
 
         if (dividend>0) == (divisor>0): 
-            print("Trueeee")
             return q
 
         else:
-            print("djdjdj",-q)
             return -q
