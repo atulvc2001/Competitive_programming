@@ -10,13 +10,13 @@ class Solution:
             if nums[m] == target:
                 return m
 
-            # left portion
+            # This is left portion
             if nums[m]>=nums[l]:
                 if target>nums[m] or target<nums[l]:
                     l = m+1 
                 else:
                     r = m-1
-            # right portion
+            # This is right portion
             else:
                 if target<nums[m] or target>nums[r]:
                     r = m-1
