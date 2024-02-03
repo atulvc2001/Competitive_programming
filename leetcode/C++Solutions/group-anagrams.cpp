@@ -24,6 +24,4 @@ public:
 };
 
 
-// The below code is more optimal than the above solution since it is only iterating through the list k times
-//
-//
+
