@@ -1,0 +1,44 @@
+--+-------------+---------+
+--| column name | type    |
+--+-------------+---------+
+--| product_id  | int     |
+--| low_fats    | enum    |
+--| recyclable  | enum    |
+--+-------------+---------+
+--product_id is the primary key (column with unique values) for this table.
+--low_fats is an enum (category) of type ('y', 'n') where 'y' means this product is low fat and 'n' means it is not.
+--recyclable is an enum (category) of types ('y', 'n') where 'y' means this product is recyclable and 'n' means it is not.
+ --
+--
+--write a solution to find the ids of products that are both low fat and recyclable.
+--
+--return the result table in any order.
+--
+--the result format is in the following example.
+--
+ --
+--
+--example 1:
+--
+--input: 
+--products table:
+--+-------------+----------+------------+
+--| product_id  | low_fats | recyclable |
+--+-------------+----------+------------+
+--| 0           | y        | n          |
+--| 1           | y        | y          |
+--| 2           | n        | y          |
+--| 3           | y        | y          |
+--| 4           | n        | n          |
+--+-------------+----------+------------+
+--output: 
+--+-------------+
+--| product_id  |
+--+-------------+
+--| 1           |
+--| 3           |
+--+-------------+
+--explanation: only products 1 and 3 are both low fat and recyclable.
+
+-- Write your MySQL query statement below
+SELECT PRODUCT_ID FROM PRODUCTS WHERE LOW_FATS = 'Y' AND RECYCLABLE = 'Y';
