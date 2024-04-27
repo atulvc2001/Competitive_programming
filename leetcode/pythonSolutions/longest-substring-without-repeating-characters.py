@@ -2,15 +2,12 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         
-        d = set()
+        tally = dict()
+        length = 0
         l = 0
-        for i in range(0,len(s)):
-            for j in range(i,len(s)):
-                if s[j] not in d:
-                    d.add(s[j])
-                    l = max(l,len(d))
-                else:
-                    d.clear()
-                    break
-        
-        return l
+        for r in range(len(s)):
+            if s[r] in tally and tally[s[r]] >= l:
+                l = tally[s[r]] + 1
+            length = max(length, r - l + 1)
+            tally[s[r]] = r
+        return length
